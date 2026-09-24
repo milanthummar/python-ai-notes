@@ -21,6 +21,8 @@ build-backend = "hatchling.build"
 packages = [
     "ch01_asyncio_and_gil",
     "ch02_decorators",
+    "ch03_generators",
+    "ch04_context_managers",
 ]
 
 [tool.pytest.ini_options]
