@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Small, per-concept learning notes on production Python and AI-agent engineering."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "pydantic>=2"
+]
 
 [dependency-groups]
 dev = [
@@ -23,6 +25,9 @@ packages = [
     "ch02_decorators",
     "ch03_generators",
     "ch04_context_managers",
+    "ch05_python_traps",
+    "ch06_pydantic_at_the_edges",
+    "ch07_typeddict_vs_dataclass_vs_pydantic",
 ]
 
 [tool.pytest.ini_options]
