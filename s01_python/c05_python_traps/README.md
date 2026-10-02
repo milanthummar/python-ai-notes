@@ -37,9 +37,9 @@ def buggy_append(item: str, bucket: list[str] = []) -> list[str]: ...
 
 def safe_append(item: str, bucket: list[str] | None = None) -> list[str]: ...
 
-def late_multipliers(n: int) -> list[Callable[[int], int]]: ...
+def late_multiplier(n: int) -> list[Callable[[int], int]]: ...
 
-def fixed_multipliers(n: int) -> list[Callable[[int], int]]: ...
+def fixed_multiplier(n: int) -> list[Callable[[int], int]]: ...
 ```
 
 ### `buggy_append` — the trap, on purpose
@@ -58,19 +58,19 @@ def fixed_multipliers(n: int) -> list[Callable[[int], int]]: ...
   results are **not** the same object.
 - If the caller passes a list, mutate and return **that** object.
 
-### `late_multipliers(n)` — the trap, on purpose
+### `late_multiplier(n)` — the trap, on purpose
 
 - Return `n` callables. The callable at index `i` is *meant* to compute
   `i * x`, but it is written so every callable reads `i` at call time.
-- After `funcs = late_multipliers(3)`, **every** `funcs[k](10)` returns `20`
+- After `funcs = late_multiplier(3)`, **every** `funcs[k](10)` returns `20`
   (the final `i`, which is `2`).
-- `late_multipliers(0)` returns `[]`.
+- `late_multiplier(0)` returns `[]`.
 
-### `fixed_multipliers(n)` — the fix
+### `fixed_multiplier(n)` — the fix
 
 - Same shape, but each callable captures its own `i` at definition time.
-- `fixed_multipliers(3)[0](10) == 0`, `[1](10) == 10`, `[2](10) == 20`.
-- `fixed_multipliers(0)` returns `[]`.
+- `fixed_multiplier(3)[0](10) == 0`, `[1](10) == 10`, `[2](10) == 20`.
+- `fixed_multiplier(0)` returns `[]`.
 
 `n` is assumed `>= 0`. Do not add other behavior.
 
@@ -85,8 +85,8 @@ without an explicit list.
 | shared default | `first = buggy_append("a")`, `second = buggy_append("b")` → `second == ["a", "b"]` and `first is second` |
 | safe calls are independent | `safe_append("a") == ["a"]`, `safe_append("b") == ["b"]`, and the two lists are not the same object |
 | caller-owned list | `bucket = ["x"]`; `safe_append("y", bucket) is bucket` and `bucket == ["x", "y"]` |
-| late binding | every `late_multipliers(3)[k](10) == 20` |
-| fixed binding | `fixed_multipliers(3)[k](10) == k * 10` for `k` in `0, 1, 2` |
+| late binding | every `late_multiplier(3)[k](10) == 20` |
+| fixed binding | `fixed_multiplier(3)[k](10) == k * 10` for `k` in `0, 1, 2` |
 | empty | both multiplier functions return `[]` for `n == 0` |
 
 ## Interview trap

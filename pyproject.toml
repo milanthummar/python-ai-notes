@@ -23,6 +23,7 @@ build-backend = "hatchling.build"
 packages = [
     "s01_python",
     "s02_data_modeling",
+    "s03_ai_agents",
 ]
 
 [tool.pytest.ini_options]

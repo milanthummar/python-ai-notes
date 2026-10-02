@@ -60,7 +60,7 @@ See `example.py` (or an inline snippet).
 
 ## Chunks
 
-Linked chunks are written; the rest are planned.
+Linked chunks have at least a spec; the rest are planned.
 
 1. [Python — language & concurrency](s01_python/)
    1. [asyncio & the GIL](s01_python/c01_asyncio_and_gil/) — I/O-bound vs CPU-bound, why one thread works
@@ -71,12 +71,12 @@ Linked chunks are written; the rest are planned.
 2. [Data modeling](s02_data_modeling/)
    1. [Pydantic at the edges](s02_data_modeling/c01_pydantic_at_the_edges/) — validate untrusted input at the boundary
    2. [TypedDict vs dataclass vs Pydantic](s02_data_modeling/c02_typeddict_vs_dataclass_vs_pydantic/) — which type when
-3. AI / agents
-   1. RAG — retrieval-augmented generation, end to end
-   2. LLM fundamentals — NN, transformer, embeddings, hallucination
-   3. LangGraph vs LangChain — blocks vs orchestration
-   4. Tool calling — how an LLM calls your functions
-   5. MCP vs A2A — agent-to-tools vs agent-to-agent
+3. [AI / agents](s03_ai_agents/)
+   1. [RAG](s03_ai_agents/c01_rag/) — chunk, embed, retrieve, build the prompt
+   2. [LLM fundamentals](s03_ai_agents/c02_llm_fundamentals/) — logits, softmax, temperature, hallucination
+   3. [LangGraph vs LangChain](s03_ai_agents/c03_langgraph_vs_langchain/) — state graph vs chain
+   4. [Tool calling](s03_ai_agents/c04_tool_calling/) — how an LLM calls your functions
+   5. [MCP vs A2A](s03_ai_agents/c05_mcp_vs_a2a/) — agent-to-tools vs agent-to-agent
 4. Production engineering
    1. Resilience trio — retry, timeout, circuit breaker
    2. Evals vs tests vs quality gate — three layers
