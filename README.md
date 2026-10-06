@@ -18,6 +18,8 @@ each one out loud in a discussion.
 - The template is deliberately the same for every chunk (below), so they stay
   small and comparable.
 - I add and refine chunks over time — this is a living repo.
+- LeetCode practice stays on LeetCode, in Python. A chunk here is one concept
+  I can explain and test. Solved problems do not get their own folders.
 
 ### Setup & run (uv)
 
@@ -69,6 +71,7 @@ Linked chunks have at least a spec; the rest are planned.
    4. [Context managers](s01_python/c04_context_managers/) — guaranteed setup/teardown
    5. [Python traps](s01_python/c05_python_traps/) — mutable defaults, late-binding closures
    6. [Lambdas](s01_python/c06_lambdas/) — one-expression functions, and `key` for `sorted`
+   7. [Collections](s01_python/c07_collections/) — Counter, defaultdict, and a bounded deque
 2. [Data modeling](s02_data_modeling/)
    1. [Pydantic at the edges](s02_data_modeling/c01_pydantic_at_the_edges/) — validate untrusted input at the boundary
    2. [TypedDict vs dataclass vs Pydantic](s02_data_modeling/c02_typeddict_vs_dataclass_vs_pydantic/) — which type when

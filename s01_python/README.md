@@ -6,3 +6,4 @@
 4. [Context managers](c04_context_managers/) — guaranteed setup/teardown
 5. [Python traps](c05_python_traps/) — mutable defaults, late-binding closures
 6. [Lambdas](c06_lambdas/) — one-expression functions, and `key` for `sorted`
+7. [Collections](c07_collections/) — Counter, defaultdict, and a bounded deque
